@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+
+        // ********* Dummy promises *********
+        const p1 = new Promise(function (resolve, reject) {
+            setTimeout(() => reject("p1 fail"), 3000)
+
+            // setTimeout(() => resolve("p1 success"), 3000)
+
+        })
+        const p2 = new Promise(function (resolve, reject) {
+
+            // setTimeout(() => resolve("p2 success"),1000)
+            setTimeout(() => reject("p2 fail"), 1000)
+
+        })
+        const p3 = new Promise(function (resolve, reject) {
+            setTimeout(() => reject("p1 fail"), 2000)
+
+            // setTimeout(() => resolve("p3 success"), 2000)
+
+        })
+
+
+        // ********* 1. Promise.all   *********
+
+        // Promise.all([p1, p2, p3])
+        //     .then(res => {
+        //         console.log(res)
+        //     })
+        //     .catch(res => {
+        //         console.error(res);
+        //     })
+
+
+        // ********* 2. Promise.allSettled   *********
+
+        // Promise.allSettled([p1, p2, p3])
+        //     .then(res => {
+        //         console.log(res)
+        //     })
+        //     .catch(res => {
+        //         console.error(res);
+        //     })
+
+
+        // ********* 3. Promise.race   *********
+
+
+        // Promise.race([p1, p2, p3])
+        //     .then(res => {
+        //         console.log(res)
+        //     })
+        //     .catch(res => {
+        //         console.error(res);
+        //     })
+        
+        
+            // ********* 3. Promise.race   *********
+
+
+        Promise.any([p1, p2, p3])
+            .then(res => {
+                console.log(res)
+            })
+            .catch(res => {
+                console.error(res);
+            })
+    </script>
+</body>
+
+</html>
